@@ -1,0 +1,471 @@
+/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+.page {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif; 
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #424242;
+    font-weight: 400;
+}
+
+h1, h3 {
+    font-family: 'Raleway', sans-serif; 
+}
+
+p {
+    font-family: 'didact gothic', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #424242;
+}
+
+a:hover {
+    color: #76D7C4;
+}    
+
+a:active {
+    color: #76D7C4;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    background-color: white;
+    margin-bottom: -60px;
+    border-bottom: 1px solid #E0E0E0;
+    z-index: 100;
+}
+
+.navbar img {
+    display: inline-block;
+    float: left;
+    max-height: 80%;
+    padding: 5px 0 0 10px;
+}
+
+nav {
+    display: inline-block;
+    float: right;
+}
+
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 5px 20px 5px 20px;
+    font-size: .7rem;
+    text-transform: uppercase;
+    color: #424242;
+    font-family: 'raleway', sans-serif;
+    font-weight: 500;
+}
+
+nav ul li:last-child {
+    padding-right: 20px;
+}
+
+
+.signUpHeader {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.signUpHeader h2 {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+button {
+    width: 25%;
+    background-color: #fff;
+    margin: 10px;
+    border: none;
+    padding: 10px;
+    outline: none;
+}
+
+button:hover {
+    color: white;
+    background-color: #76D7C4;
+    border: none;
+    outline: none;
+}
+
+.logInContainer {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 200px;
+    display: none;
+}
+
+
+.registerContainer {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 200px;
+    display: none;
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+form label {
+    display: none;
+}
+
+input[type="text"] {
+    -webkit-appearance: none;
+    border: none;
+    height: 40px;
+    width: 94%;
+    background-color: #E0E0E0;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="button"] {
+    font-family: "raleway", sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+    -webkit-appearance: none;
+    border: none;
+    height: 40px;
+    width: 100%;
+    background-color: #E0E0E0;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+input[type="button"]:hover {
+    color: white;
+    background-color: #76D7C4;
+    border: none;
+    outline: none;
+}
+
+input[placeholder] {
+    font-family: "raleway", sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding-left: 20px;
+    color: #424242;
+} 
+
+.submit {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cancel {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.profile {
+    display: none;
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 10px solid black;
+}
+
+.logOut {
+    width: 95%;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

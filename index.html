@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="page clearfix">
+            <div class="navbar">
+                <img src="img/ringicon.png" alt="Ring Logo">
+                <nav>
+                    <ul>
+                        <a href="#rules"><li>Rules</li></a> | 
+                        <a href="#about"><li>The Bachelorette</li></a> | 
+                        <a href="#contestants"><li>Contestants</li></a> | 
+                        <a href="#sign-up"><li>Sign-Up</li></a> | 
+                        <li>Scores</li> | 
+                        <li>Your Team</li>
+                    </ul> 
+                </nav>
+            </div>
+
+            <div class="signUpContainer clearfix">
+                <div class="signUpHeader">
+                    <button class="login">
+                        <h2>Log In</h2>
+                    </button>
+                    <button class="register">
+                        <h2>Register</h2>
+                    </button>
+                </div>
+                <div class="logInContainer clearfix">
+                    <form class="clearfix">
+                    
+                        <label for "email">E-mail:</label>
+                        <input id="login-email" type="text" name="email" placeholder="Email">
+
+                        <label for "password">Password:</label>
+                        <input id="login-password" type="text" name="passsword" placeholder="Password">
+
+                        <div class="submit">
+                            <input id="loginButton" type="button" value="LOG IN">
+                        </div>
+
+                        <div class="cancel">
+                            <input id="cancel" type="button" value="CANCEL">
+                        </div>
+                        
+                    </form>
+                </div>
+
+
+                <div class="registerContainer clearfix">
+                    <form class="clearfix">
+                    
+                        <label for "name">Name:</label>
+                        <input id="name" type="text" name="name" placeholder="Name">
+
+                        <label for "email">E-mail:</label>
+                        <input id="email" type="text" name="email" placeholder="Email">
+
+                        <label for "password">Password:</label>
+                        <input id="password" type="text" name="passsword" placeholder="Password">
+
+                        <div class="submit">
+                            <input id="registerButton" type="button" value="REGISTER">
+                        </div>
+
+                        <div class="cancel">
+                            <input id="cancel" type="button" value="CANCEL">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="profile">
+                <button class="logOut">
+                        <h2>Log Out</h2>
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+        <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBHrq5E7sG8ZPFXi8qPUz7dFYfJcJEuZjc",
+            authDomain: "bachelor-fantasy.firebaseapp.com",
+            databaseURL: "https://bachelor-fantasy.firebaseio.com",
+            storageBucket: "bachelor-fantasy.appspot.com",
+          };
+          firebase.initializeApp(config);
+        </script>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+
+    </body>
+</html>
