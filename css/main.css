@@ -208,6 +208,7 @@ button {
     border: none;
     padding: 10px;
     outline: none;
+
 }
 
 button:hover {
@@ -304,7 +305,7 @@ input[placeholder] {
 .logOut {
     width: 95%;
     margin: 0 auto;
-    display: inherit;
+    display: block;
     margin-bottom: 20px;
 }
 
@@ -358,12 +359,21 @@ form {
 input[type="text"] {
     -webkit-appearance: none;
     border: 5px solid #E0E0E0;
-/*    border-radius: 3px;
-*/  height: 40px;
+    height: 40px;
     width: 100%;
     background-color: #E0E0E0;
     padding: 10px;
 }
+
+input[type="password"] {
+    -webkit-appearance: none;
+    border: 5px solid #E0E0E0;
+    height: 40px;
+    width: 100%;
+    background-color: #E0E0E0;
+    padding: 10px;
+}
+
 
 .form-left-column label {
     display: none;
@@ -531,11 +541,16 @@ input[type=text]:focus {
 }
 
 .yourTeam h1 {
+    color: white;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5rem;
     margin-bottom: 60px;
+    width: 100%;
+    background: #76D7C4;
+    font-weight: 400;
+    padding: 10px;
 }
 
 .team-member h2 {
@@ -581,6 +596,43 @@ input[type=text]:focus {
 .teamTotal h2 {
     padding: 20px;
     font-weight: 800;
+}
+
+
+.allScores {
+    padding-top: 100px;
+}
+
+.scoresList {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.scoresList h1 {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-right: 10px;
+    text-transform: uppercase;
+    color: #76D7C4;
+    font-weight: 500;
+}
+
+.scoresList h2 {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    float: right;
+    padding-right: 30px;
+
+}
+
+.allScoreTeam {
+    margin: 15px;
+    background: white;
+    padding: 5px 0 5px 30px;
 }
 /* ==========================================================================
    Helper classes

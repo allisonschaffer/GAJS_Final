@@ -51,15 +51,16 @@ function checkForTeam() {
         var teamScores = [firstMemberTotal, secondMemberTotal, thirdMemberTotal, fourthMemberTotal, fifthMemberTotal]
         var teamTotal = sum(teamScores)
 
-        var firstMemberPhoto = contestants[team.teamMembers[0]].photo
-        var secondMemberPhoto = contestants[team.teamMembers[1]].photo
-        var thirdMemberPhoto = contestants[team.teamMembers[2]].photo
-        var fourthMemberPhoto = contestants[team.teamMembers[3]].photo
-        var fifthMemberPhoto = contestants[team.teamMembers[4]].photo
+        var firstMemberPhoto = contestants[team.teamMembers[0].replace(/[^a-zA-Z]/g, '')].photo
+        var secondMemberPhoto = contestants[team.teamMembers[1].replace(/[^a-zA-Z]/g, '')].photo
+        var thirdMemberPhoto = contestants[team.teamMembers[2].replace(/[^a-zA-Z]/g, '')].photo
+        var fourthMemberPhoto = contestants[team.teamMembers[3].replace(/[^a-zA-Z]/g, '')].photo
+        var fifthMemberPhoto = contestants[team.teamMembers[4].replace(/[^a-zA-Z]/g, '')].photo
 
+        var userDisplayName = firebase.auth().currentUser.displayName
 
+        $('.allScores').hide();
         $('.profile .sign-up').hide();
-        $('.profile .yourTeam h2').html(firebase.auth().currentUser.displayName + '\'s Team!');
         
         // var templateSource = $('#teamMembers').html()
         // var compiledTemplate = Handlebars.compile(templateSource)
@@ -67,9 +68,9 @@ function checkForTeam() {
         
         // var generatedHtml = compiledTemplate(app.ref)
         // $('.profile .yourTeam').html(generatedHtml)
-
+        
         $('.profile .yourTeam').html(
-          '<h1>' + firebase.auth().currentUser.displayName + '\'s Team!' + '</h1>' +
+          '<h1>' + userDisplayName + '\'s Team' + '</h1>' +
           '<div class="team-member">' +
             '<img src="' + firstMemberPhoto +'">' +
             '<h2>' + team.teamMembers[0] + '</h2>' +
@@ -135,6 +136,7 @@ function checkForTeam() {
           '</div>');
 
         $('.profile .yourTeam').show();
+        $('.logOut').show();
       })
 
     } else {
@@ -152,10 +154,13 @@ firebase.auth().onAuthStateChanged(function(user) {
     $('.signUpHeader').hide();
     $('.logInContainer').hide();
     $('.registerContainer').hide();
+    $('.allScores').hide();
     $('.profile').show();
   } else {
    $('.profile').hide();
    $('.signUpHeader').show();
+   $('.allScores').hide();
+   $('.logOut').hide();
       // No user is signed in.
     }
   });
@@ -262,33 +267,41 @@ $("input[type='checkbox']").change(function(e){
 
 $(".submitTeam").click(function(event){
   event.preventDefault();
-  var picks = $("input[type='checkbox']:checked").map(function(){
-    return $(this).val();
-  }).get();
 
-  console.log(picks);
+  var checkedBoxes = $("input[type='checkbox']:checked");
+  var checkedBoxesLength = checkedBoxes.length;
 
-  var name = $('input[name="name"]').val()
+  if(checkedBoxes.length <=4){
+    window.alert('You must pick 5 contestants!');
+  }else{
+      var picks = $("input[type='checkbox']:checked").map(function(){
+        return $(this).val();
+      }).get();
 
-  var newTeam = app.ref('teams').push({
-    teamMembers: picks,
-    uid: firebase.auth().currentUser.uid,
-    name: name
-  })
+      console.log(picks);
+
+      var name = $('input[name="name"]').val()
+
+      var newTeam = app.ref('teams').push({
+        teamMembers: picks,
+        uid: firebase.auth().currentUser.uid,
+        name: name
+      })
 
 
-  var user = firebase.auth().currentUser;
+      var user = firebase.auth().currentUser;
 
-  user.updateProfile({
-      displayName: name
-  }).then(function() {
-      console.log('Update successful')
-  }, function(error) {
-      console.log('An error happene')
-  });
+      user.updateProfile({
+          displayName: name
+      }).then(function() {
+          console.log('Update successful')
+      }, function(error) {
+          console.log('An error happene')
+      });
 
-  $('.profile .sign-up').hide();
-  $('.profile .yourTeam').show();
+      $('.profile .sign-up').hide();
+      $('.profile .yourTeam').show();
+  }
 });
 
 ////////////* Team Members *////////////////////
@@ -296,7 +309,12 @@ $(".submitTeam").click(function(event){
 $('#scores').on('click', function(){
   console.log('scores')
 
+  $('.allScores .scoresList').html('');
+
+  $('.signUpHeader').hide();
   $('.profile').hide();
+  $('.page .logOut').hide();
+  $('.allScores').show();
 
   app.ref('contestants').on('value', function(contestantsSnapshot) {
     var contestants = contestantsSnapshot.val()
@@ -305,11 +323,18 @@ $('#scores').on('click', function(){
       teamsSnapshot.forEach(function(teamContainer) {
         var team = teamContainer.val()
         var teamMembers = team.teamMembers
+        var teamName = team.name
 
         var teamTotal = calculateTeamScore(contestants, team)
 
-        console.log(teamMembers, teamTotal)
+        console.log(teamName, teamTotal)
 
+        $('.allScores .scoresList').append(
+          '<div class="allScoreTeam">' +
+            '<h1>' + teamName  + '</h1>' +
+            '<h2>' + teamTotal + '</h2>' +
+           '</div>' 
+          );
 
       })
     })
@@ -337,5 +362,43 @@ function calculateTeamScore(contestants, team) {
 }
 
 
+///////////////////////////////////////
 
+$('#yourTeam').on("click", function(){
+
+  var user = firebase.auth().currentUser;
+
+  if (user) {
+    $('.profile').show();
+    $('.page .logOut').show();
+    $('.allScores').hide();
+    $('.signUpHeader').hide();
+    $('.logInContainer').hide();
+    $('.registerContainer').hide();
+  } else {
+    $('.signUpHeader').show();
+    $('.allScores').hide();
+  }
+});
+
+
+$('#signUp').on("click", function(){
+
+    var user = firebase.auth().currentUser;
+
+    if (user) {
+    $('.profile').show();
+    $('.page .logOut').show();
+    $('.allScores').hide();
+    $('.signUpHeader').hide();
+    $('.logInContainer').hide();
+    $('.registerContainer').hide();
+  } else {
+    $('.signUpHeader').show();
+    $('.allScores').hide();
+    $('.profile').hide();
+    $('.registerContainer').hide();
+    $('.logInContainer').hide();
+  }
+});
 
