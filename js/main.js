@@ -314,9 +314,9 @@ $('#scores').on('click', function(){
   $('.signUpHeader').hide();
   $('.profile').hide();
   $('.page .logOut').hide();
-  $('.allScores').show();
   $('.logInContainer').hide();
   $('.registerContainer').hide();
+  $('.allScores').show();
 
   app.ref('contestants').on('value', function(contestantsSnapshot) {
     var contestants = contestantsSnapshot.val()
