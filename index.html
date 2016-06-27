@@ -28,12 +28,12 @@
                 <img src="img/ringicon.png" alt="Ring Logo">
                 <nav>
                     <ul>
-                        <a href="http://bachelor-fantasy.com/#rules"><li>Rules</li></a> | 
-                        <a href="http://bachelor-fantasy.com/#about"><li>The Bachelorette</li></a> | 
-                        <a href="http://bachelor-fantasy.com/#contestants"><li>Contestants</li></a> | 
-                        <li id="signUp">Sign-Up</li></a> | 
-                        <li id="scores">Scores</li> | 
-                        <li id="yourTeam">Your Team</li>
+                        <a href="#rules"><li>Rules</li></a> | 
+                        <a href="#about"><li>The Bachelorette</li></a> | 
+                        <a href="#contestants"><li>Contestants</li></a> | 
+                        <a href="#sign-up"><li>Sign-Up</li></a> | 
+                        <li>Scores</li> | 
+                        <li>Your Team</li>
                     </ul> 
                 </nav>
             </div>
@@ -54,7 +54,7 @@
                         <input id="login-email" type="text" name="email" placeholder="Email">
 
                         <label for "password">Password:</label>
-                        <input id="login-password" type="password" name="passsword" placeholder="Password">
+                        <input id="login-password" type="text" name="passsword" placeholder="Password">
 
                         <div class="submit">
                             <input id="loginButton" type="button" value="LOG IN">
@@ -63,7 +63,7 @@
                         <div class="cancel">
                             <input id="cancel" type="button" value="CANCEL">
                         </div>
-
+                        
                     </form>
                 </div>
 
@@ -71,14 +71,14 @@
                 <div class="registerContainer clearfix">
                     <form class="clearfix">
                     
-                       <!--  <label for "name">Name:</label>
-                        <input id="name" type="text" name="name" placeholder="Name"> -->
+                        <label for "name">Name:</label>
+                        <input id="name" type="text" name="name" placeholder="Name">
 
                         <label for "email">E-mail:</label>
                         <input id="email" type="text" name="email" placeholder="Email">
 
                         <label for "password">Password:</label>
-                        <input id="password" type="password" name="passsword" placeholder="Password">
+                        <input id="password" type="text" name="passsword" placeholder="Password">
 
                         <div class="submit">
                             <input id="registerButton" type="button" value="REGISTER">
@@ -92,128 +92,12 @@
             </div>
 
             <div class="profile">
-
-                <div class="yourTeam">
-                    <h2>YOUR TEAM</h2>
-                    <ul class="clearfix">
-                    </ul>   
-                </div> 
-                         
-                <div class="sign-up">
-                <h2>Submit Your Team!</h2>
-
-                <!-- <form action="https://formspree.io/allisonschaffer@gmail.com" method="POST" data-parsley-validate=""> -->
-                <form>
-                    <div class="cf">
-                        <div class="form-left-column">
-                            <label for="name">Name</label>
-                            <input class="name" id="name" name="name" placeholder="Name" type="text" required="">                   
-                        </div>
-<!--                         <div class="form-right-column"> 
-                            <label for="email">E-mail</label>
-                            <input class="email" name="email" placeholder="E-mail" type="text" required="">
-                        </div>   -->    
-                      <div class="contestants">
-                            <div class="contestants-form clearfix">
-                                <label for="team-members">Select <strong>five</strong> Contestants for your team</label>
-                                <div class="form-four-column">
-                                    <div class="contestants-column">
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Alex" data-parsley-maxcheck="5">Alex</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Ali">Ali</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Brandon">Brandon</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Chad">Chad</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Chase">Chase</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Christian">Christian</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Coley">Coley</label><br>
-                                    </div>
-                                    <div class="contestants-column">
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Derek">Derek</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Daniel">Daniel</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Evan">Evan</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Grant">Grant</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Jake">Jake</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="James F.">James F.</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="James S.">James S.</label><br>
-                                    </div>
-                                    <div class="contestants-column">
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="James Taylor">James Taylor</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Jonathan">Jonathan</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Jordan">Jordan</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Luke">Luke</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Nick B.">Nick B.</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Nick S.">Nick S.</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Peter">Peter</label><br>
-                                    </div>
-                                    <div class="contestants-column">
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Robby">Robby</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Sal">Sal</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Vinny">Vinny</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Wells">Wells</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Will">Will</label><br>
-                                    </div>
-                                </div>
-                                <div class="form-two-column"> 
-                                    <div class="contestants-column">
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Alex" data-parsley-maxcheck="5">Alex</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Ali">Ali</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Brandon">Brandon</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Chad">Chad</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Chase">Chase</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Christian">Christian</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Coley">Coley</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Derek">Derek</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Daniel">Daniel</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Evan">Evan</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Grant">Grant</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Jake">Jake</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="James F.">James F.</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="James S.">James S.</label><br>
-                                    </div>
-                                    <div class="contestants-column">
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="James Taylor">James Taylor</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Jonathan">Jonathan</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Jordan">Jordan</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Luke">Luke</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Nick B.">Nick B.</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Nick S.">Nick S.</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Peter">Peter</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Robby">Robby</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Sal">Sal</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Vinny">Vinny</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Wells">Wells</label><br>
-                                        <label><input type="checkbox" name="team-members[]" class="team-members" value="Will">Will</label><br>
-                                    </div>
-                                </div>       
-                            </div>
-                      </div>  
-                      <div class="submitTeam">                
-                            <label for="submit_button">Submit</label>
-                            <input class="submit_button" type="submit" value="Submit">
-                        </div>
-                    </div>
-                </form>
-        
+                <button class="logOut">
+                        <h2>Log Out</h2>
+                </button>
             </div>
 
-
         </div>
-
-
-            <button class="logOut">
-                <h2>Log Out</h2>  
-            </button>
-        </div>
-
-        <div class="allScores">
-                <div class="scoresList">
-                </div>
-
-                <button class="logOut">
-                <h2>Log Out</h2>  
-                </button>
-
-        </div>
-    </div>
 
 
 
@@ -233,29 +117,8 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
-
-
-        <script id="teamMembers" type="text/x-handlebars-template">
-
-          {{#each teamMembers as |teamMember|}}
-            <div class="team-member">
-                <h2>{{teamMember.name}}</h2>
-                <ul>
-                    {{#each teamMember.scores as |score, index|}}
-                    <li>Week {{index}}: {{score}}</li>
-                    {{/each}}
-                </ul>
-                <h3>{{getTeamMemberTotal teamMember}}</h3>
-            </div>
-          {{/each}}
-
-        </script>
 
 
     </body>
