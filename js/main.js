@@ -22,6 +22,9 @@ function checkForTeam() {
 
         console.log(team)
 
+        var yourTeam = team.name
+        console.log(yourTeam)
+
         /*
           {{#each teamMembers as |teamMember|}}
             <div class="team-member">
@@ -70,7 +73,7 @@ function checkForTeam() {
         // $('.profile .yourTeam').html(generatedHtml)
         
         $('.profile .yourTeam').html(
-          '<h1>' + userDisplayName + '\'s Team' + '</h1>' +
+          '<h1>' + yourTeam + '\'s Team' + '</h1>' +
           '<div class="team-member">' +
             '<img src="' + firstMemberPhoto +'">' +
             '<h2>' + team.teamMembers[0] + '</h2>' +
